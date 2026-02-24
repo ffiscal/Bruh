@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&family=Courier+Prime:wght@400;700&display=swap');
 * {
 margin: 0;
 padding: 0;
@@ -9,6 +10,7 @@ height: 100%;
 overflow: hidden;
 background: #000000;
 color: #000000;
+font-family: 'Courier Prime', monospace;
 }
 .vn-container {
 position: relative;
@@ -92,6 +94,7 @@ color: #ffffff;
 padding: 8px 30px;
 border: 4px solid #ffffff;
 font-size: 20px;
+font-family: 'Courier Prime', monospace;
 font-weight: bold;
 letter-spacing: 2px;
 box-shadow: 4px 4px 0 0 #000000;
@@ -111,6 +114,7 @@ display: none;
 display: block;
  }
 .dialogue-text {
+font-family: 'Courier Prime', monospace;
 font-size: 22px;
 line-height: 1.8;
 color: #000000;
@@ -137,6 +141,7 @@ background: #000000;
 color: #ffffff;
 border: 4px solid #000000;
 padding: 12px 30px;
+font-family: 'Courier Prime', monospace;
 font-size: 16px;
 font-weight: bold;
 cursor: pointer;
@@ -183,6 +188,7 @@ transform: translateX(-50%);
 background: #000000; color: #ffffff;
 border: 4px solid #000000;
 padding: 12px 30px;
+font-family: 'Courier Prime', monospace;
 font-size: 16px;font-weight: bold;
 cursor: pointer;
 letter-spacing: 2px;
@@ -213,15 +219,18 @@ padding: 30px 25px 60px 25px;
 min-height: 150px;
 }
 .dialogue-text {
+ font-family: 'Courier Prime', monospace;
 font-size: 18px;
 line-height: 1.6;
 }
 .name-plate {
+ font-family: 'Courier Prime', monospace;
 font-size: 16px;
 padding: 6px 20px;
 top: -30px;
 }
 .next-button, .restart-button {
+font-family: 'Courier Prime', monospace;
 padding: 10px 20px;
 font-size: 14px;
 }
