@@ -1,0 +1,228 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+body, html {
+width: 100%;
+height: 100%;
+overflow: hidden;
+background: #000000;
+color: #000000;
+}
+.vn-container {
+position: relative;
+width: 100%;
+height: 100vh;
+background: #000000;
+overflow: hidden;
+}
+.vn-background {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #000000;
+z-index: 1;
+}
+.vn-background::before {
+content: '';
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, #ffffff 2px, #ffffff 3px), repeating-linear-gradient(90deg, transparent, transparent 2px, #ffffff 2px, #ffffff 3px);
+opacity: 0.03;
+pointer-events: none;
+}
+.character-container {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -60%);
+z-index: 2;
+animation: fadeInCharacter 1s ease-in, subtleFloat 4s ease-in-out infinite;
+}
+.character-sprite {
+width: 350px;
+height: 350px;
+object-fit: contain;
+ filter: contrast(1.3) brightness(1.1);
+}
+@keyframes subtleFloat {0%, 100% { transform: translate(-50%, -60%) translateY(0px);}
+50% { transform: translate(-50%, -60%) translateY(-10px); }
+ }
+@keyframes fadeInCharacter {
+from { opacity: 0; }
+to { opacity: 1; }
+        }
+input[type="radio"] {
+display: none;
+}
+.dialogue-box {
+position: absolute;
+bottom: 40px;
+left: 50%;
+transform: translateX(-50%);
+width: 90%;
+max-width: 900px;
+background: #ffffff;
+border: 6px solid #000000;
+z-index: 10;
+box-shadow: 0 0 0 2px #ffffff, 0 0 0 8px #000000,10px 10px 0 0 #000000;
+animation: slideUp 0.5s ease-out;
+}
+@keyframes slideUp {
+from {transform: translateX(-50%) translateY(100px);
+opacity: 0;
+}
+to { 
+transform: translateX(-50%) translateY(0);
+opacity: 1;
+}
+}
+.name-plate {
+position: absolute;
+top: -35px;
+left: 30px;
+background: #000000;
+color: #ffffff;
+padding: 8px 30px;
+border: 4px solid #ffffff;
+font-size: 20px;
+font-weight: bold;
+letter-spacing: 2px;
+box-shadow: 4px 4px 0 0 #000000;
+}
+.text-container {
+padding: 40px 40px 70px 40px;
+min-height: 180px;
+background: #ffffff;
+ }
+.scene {
+display: none;
+}   
+#scene1:checked ~ .dialogue-box .scene1,
+ #scene2:checked ~ .dialogue-box .scene2,
+ #scene3:checked ~ .dialogue-box .scene3,
+#scene4:checked ~ .dialogue-box .scene4 {
+display: block;
+ }
+.dialogue-text {
+font-size: 22px;
+line-height: 1.8;
+color: #000000;
+letter-spacing: 0.5px;
+word-wrap: break-word;
+overflow: hidden;
+border-right: 2px solid #000000;
+white-space: nowrap;
+animation: typing 3.5s steps(80, end), blink-caret 0.75s step-end infinite;
+}
+@keyframes typing {
+from { width: 0; }
+to { width: 100%; }
+}
+@keyframes blink-caret {
+from, to { border-color: transparent; }
+50% { border-color: #000000; }
+        }
+.next-button {
+position: absolute;
+bottom: 20px;
+right: 30px;
+background: #000000;
+color: #ffffff;
+border: 4px solid #000000;
+padding: 12px 30px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+letter-spacing: 2px;
+transition: all 0.1s ease;
+box-shadow: 4px 4px 0 0 #000000;
+display: inline-block;
+}
+.next-button:hover {
+background: #ffffff;
+color: #000000;
+border-color: #000000;
+transform: translate(2px, 2px);
+box-shadow: 2px 2px 0 0 #000000;
+}
+.next-button:active {
+transform: translate(4px, 4px);
+box-shadow: 0 0 0 0 #000000;
+}
+#scene4:checked ~ .dialogue-box .next-button {
+display: none;
+}
+.glitch-overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+pointer-events: none;
+z-index: 100;
+opacity: 0;
+animation: randomGlitch 8s infinite;
+}
+@keyframes randomGlitch {
+0%, 90%, 100% { opacity: 0; } 91%, 93% {opacity: 0.3;
+background: repeating-linear-gradient(0deg,#ffffff 0px,#ffffff 2px,transparent 2px,transparent 4px);
+}
+}
+.restart-button {
+position: absolute;
+bottom: 20px;
+left: 50%;
+transform: translateX(-50%);
+background: #000000; color: #ffffff;
+border: 4px solid #000000;
+padding: 12px 30px;
+font-size: 16px;font-weight: bold;
+cursor: pointer;
+letter-spacing: 2px;
+box-shadow: 4px 4px 0 0 #000000;
+display: none;
+}
+#scene4:checked ~ .dialogue-box .restart-button {
+display: inline-block;
+}
+.restart-button:hover {
+background: #ffffff;
+color: #000000;
+transform: translateX(-50%) translate(2px, 2px);
+{
+box-shadow: 2px 2px 0 0 #000000;
+}
+@media (max-width: 768px) {
+.character-sprite {
+width: 250px;
+height: 250px;
+}
+.dialogue-box {
+width: 95%;
+bottom: 20px;
+}
+.text-container {
+padding: 30px 25px 60px 25px;
+min-height: 150px;
+}
+.dialogue-text {
+font-size: 18px;
+line-height: 1.6;
+}
+.name-plate {
+font-size: 16px;
+padding: 6px 20px;
+top: -30px;
+}
+.next-button, .restart-button {
+padding: 10px 20px;
+font-size: 14px;
+}
+  }
