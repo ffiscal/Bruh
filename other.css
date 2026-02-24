@@ -211,17 +211,28 @@ width: 250px;
 height: 250px;
 }
 .dialogue-box {
-width: 95%;
-bottom: 20px;
+  position: fixed;
+  bottom: 120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 900px;
+  background: #ffffff;
+  border: 6px solid #000000;
+  z-index: 999;
 }
 .text-container {
 padding: 30px 25px 60px 25px;
 min-height: 150px;
 }
 .dialogue-text {
- font-family: 'Courier Prime', monospace;
-font-size: 18px;
-line-height: 1.6;
+  font-family: 'Courier Prime', monospace;
+  font-size: 22px;
+  line-height: 1.8;
+  color: #000;
+  white-space: normal;
+  overflow-y: auto;
+  max-height: 220px;
 }
 .name-plate {
  font-family: 'Courier Prime', monospace;
