@@ -16,6 +16,7 @@ font-family: 'Courier Prime', monospace;
   width: 100%;
   min-height: 100vh;
   overflow: visible;
+  padding-bottom: 220px;
 }
 .vn-background {
 position: absolute;
@@ -233,3 +234,8 @@ padding: 10px 20px;
 font-size: 14px;
 }
   }
+@media (max-width: 768px) {
+  .dialogue-box {
+    bottom: 120px;
+  }
+}
