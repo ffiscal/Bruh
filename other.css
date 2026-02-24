@@ -64,10 +64,11 @@ display: none;
 }
 .dialogue-box {
 position: absolute;
-bottom: 40px;
+width: 90%;
+position: fixed;
+bottom: 90px;
 left: 50%;
 transform: translateX(-50%);
-width: 90%;
 max-width: 900px;
 background: #ffffff;
 border: 6px solid #000000;
